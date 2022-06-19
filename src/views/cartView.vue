@@ -211,7 +211,6 @@ export default {
             quantity: '',
             price: 0,
             totalAmount: 0,
-            hasItem: true
         }
     },
     methods: {
@@ -230,6 +229,8 @@ export default {
         },
         deleteItem(id) {
             console.log(this.cartList)
+
+
             this.cartList = this.cartList.map((item) => {
                 if (item.id == id) {
                     item.quantity--
@@ -259,6 +260,9 @@ export default {
             return totalAmount
 
         },
+        hasItem(){
+            return this.cartList!=""
+        }
 
     }
     // watch: {
